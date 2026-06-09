@@ -1,0 +1,9 @@
+for (let i =1; i<=7; i++) {
+    let pattern = " ";
+    for (let j=1; j<= 7; j++) {
+        pattern += " * " ;
+
+      } 
+      console.log(pattern); 
+    }
+    
