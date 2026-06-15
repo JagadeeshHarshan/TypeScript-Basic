@@ -1,22 +1,22 @@
-type Employee = {
-  id: number;
-  name: string;
-  role: string;
-  salary: number;
-  active: boolean;
-  skills: string[];
-};
+// type Employee = {
+//   id: number;
+//   name: string;
+//   role: string;
+//   salary: number;
+//   active: boolean;
+//   skills: string[];
+// };
 
-const employees: Employee[] = [
-  { id: 1, name: "Arun", role: "Developer", salary: 50000, active: true, skills: ["JS", "TS"] },
-  { id: 2, name: "Kumar", role: "Tester", salary: 40000, active: false, skills: ["Testing"] },
-  { id: 3, name: "Raj", role: "Developer", salary: 70000, active: true, skills: ["React", "TS"] },
-  { id: 4, name: "Siva", role: "Manager", salary: 90000, active: true, skills: ["Leadership"] },
-  { id: 5, name: "Vicky", role: "Developer", salary: 65000, active: false, skills: ["Node", "TS"] },
-];
+// const employees: Employee[] = [
+//   { id: 1, name: "Arun", role: "Developer", salary: 50000, active: true, skills: ["JS", "TS"] },
+//   { id: 2, name: "Kumar", role: "Tester", salary: 40000, active: false, skills: ["Testing"] },
+//   { id: 3, name: "Raj", role: "Developer", salary: 70000, active: true, skills: ["React", "TS"] },
+//   { id: 4, name: "Siva", role: "Manager", salary: 90000, active: true, skills: ["Leadership"] },
+//   { id: 5, name: "Vicky", role: "Developer", salary: 65000, active: false, skills: ["Node", "TS"] },
+// ];
 
 
- console.log(employees);
+//  console.log(employees);
 // employees.forEach(e => console.log(e.name));
 // employees.forEach(e => console.log(e.role, e.salary));
 // employees.forEach(e => console.log(`${e.name} - ${e.active}`));
@@ -77,7 +77,14 @@ const employees: Employee[] = [
 
 
 
+let fruits = ["Apple","Banana","Orange"];
+let fruitobject = fruits.reduce<Record<string, boolean>>((acc, item) => {
+  acc[item] = true;
+  return acc;
 
+},{});
+console.log(fruits);
+console.log(fruitobject);
 
 
 
