@@ -12,13 +12,12 @@ let results: Result[] = [
   { studentId: 5, name: "Eve", marks: [85, 88, 90] }
 ];
 
-// Compute average per student
 let rankedStudentPerformance = results.map(r => {
   let avg = r.marks.reduce((sum, m) => sum + m, 0) / r.marks.length;
   return { ...r, avg };
 });
 
-// Sort by rank
+
 rankedStudentPerformance.sort((a, b) => b.avg - a.avg);
 
 // Calculate percentile cutoff (top 20%)
