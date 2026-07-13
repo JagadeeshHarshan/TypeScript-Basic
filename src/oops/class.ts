@@ -1,21 +1,21 @@
-// class Car {
-//     brand: string;
-//     model: string;
+class Car {
+    brand: string;
+    model: string;
 
-//     constructor(brand: string, model: string) {
-//         this.brand = brand;
-//         this.model = model;
-//     }
+    constructor(brand: string, model: string) {
+        this.brand = brand;
+        this.model = model;
+    }
 
-//     start() {
-//         console.log(this.brand + " is starting");
-//     }
+    start (){
+        console.log(this.brand + " is starting");
+    }
 
-//     displayDetails() {
-//         console.log("Car Brand:", this.brand);
-//         console.log("Car Model:", this.model);
-//     }
-// }
+    displayDetails(): void {
+        console.log("Car Brand:", this.brand);
+        console.log("Car Model:", this.model);
+    }
+}
 
 // const car1 = new Car("TATA", "HARRIER");
 
@@ -30,7 +30,7 @@
 //         this.name = name;
 //         this.marks = marks;
 //     }
-//     displayDetails() {
+//     displayDetails(): void {
 //         console.log("Student Name:" , this.name);
 //         console.log("Student Marks:" , this.marks);
 //     }
@@ -157,32 +157,64 @@
 
 //---------------------------------------------------------------------------------
 
-class BankAccount {
-    calculateInterest () {
-        console.log("calculating interest");
-    }
+// class BankAccount {
+//     calculateInterest () {
+//         console.log("calculating interest");
+//     }
+// }
+// class SavingsAccount extends BankAccount{
+//     calculateInterest () {
+//         console.log("savings account interest : 5%");
+//     }
+// }
+// class CurrentAccount extends BankAccount{
+//     calculateInterest () {
+//         console.log("current account interest: 2%");
+//     }
+// }
+// class FixedDeposit extends BankAccount{
+//     calculateInterest() {
+//         console.log("Fixed Deposit interest: 8%");
+//     }
+// }
+
+// const Savings = new SavingsAccount();
+// const Current = new CurrentAccount();
+// const FixedD = new FixedDeposit();
+
+// Savings.calculateInterest();
+// Current.calculateInterest();
+// FixedD.calculateInterest();
+
+// ------------------------------------------------------------
+// Abstraction
+
+abstract class Shape {
+    abstract area (): number;
+    abstract perimeter (): number;
+
+showDetails(): void {
+    console.log(`area:${this.area()},perimeter :${this.perimeter()}`)
 }
-class SavingsAccount extends BankAccount{
-    calculateInterest () {
-        console.log("savings account interest : 5%");
-    }
-}
-class CurrentAccount extends BankAccount{
-    calculateInterest () {
-        console.log("current account interest: 2%");
-    }
-}
-class FixedDeposit extends BankAccount{
-    calculateInterest() {
-        console.log("Fixed Deposit interest: 8%");
-    }
 }
 
-const Savings = new SavingsAccount();
-const Current = new CurrentAccount();
-const FixedD = new FixedDeposit();
+class Rectangle extends Shape{
+    width: number;
+    height: number;
 
-Savings.calculateInterest();
-Current.calculateInterest();
-FixedD.calculateInterest();
+    constructor(width: number, height : number) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+    area(): number {
+        return this.width * this.height;
+    }
+    perimeter (): number{
+        return 2 * (this.width+ this.height);
+    }
+}
+const rect = new Rectangle(15,10);
+rect.showDetails();
+
 
